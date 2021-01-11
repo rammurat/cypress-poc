@@ -49,3 +49,19 @@ describe('Validate Invalid user', () => {
         cy.contains('Invalid user or password')
     })
 })
+
+
+describe('Debugging', () => {
+    it('Pause', () => {
+        // load application home page
+        cy.visit('http://localhost:3000/')
+
+        cy.pause()
+
+        cy.visit('http://localhost:3000/products')
+
+        cy.debug()
+
+        cy.visit('http://localhost:3000/products/bras/2')
+    })
+})
