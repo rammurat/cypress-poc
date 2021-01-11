@@ -41,7 +41,7 @@ function Nav({data}) {
 
           <li className="nav-item dropdown">
             {!session ?
-              <a className="nav-link" href={`/api/auth/signin`}  onClick={(e) => {
+              <a className="nav-link login" href={`/api/auth/signin`}  onClick={(e) => {
                     e.preventDefault()
                     signIn()
                   }}>Sign in</a>
