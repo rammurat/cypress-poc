@@ -31,3 +31,21 @@ describe('Login user', () => {
         cy.contains('Sign out')
     })
 })
+
+describe('Validate Invalid user', () => {
+    it('Load home page', () => {
+        // load application home page
+        cy.visit('http://localhost:3000/')
+
+        // go to PDP page
+        cy.get('.login').click()
+
+        // login user
+        cy.get('#inputEmail').type('invalid@gmail.com')
+        cy.get('#inputPassword').type('idea123')
+        cy.get('.Login_formSignin__3Unav').submit()
+
+        // // validate my account url
+        cy.contains('Invalid user or password')
+    })
+})
