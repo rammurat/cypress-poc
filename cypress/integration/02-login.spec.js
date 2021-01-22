@@ -3,11 +3,11 @@ describe('Login page', () => {
         // load application home page
         cy.visit('http://localhost:3000/')
 
-        // go to PDP page
+        // go to login page
         cy.get('.login').click()
 
         // login user
-        cy.get('#inputEmail').type('ram@gmail.com')
+        cy.get('#inputEmail').type('rammurat@gmail.com')
         cy.get('#inputPassword').type('idea123')
         cy.get('.Login_formSignin__3Unav').submit()
 
@@ -18,7 +18,6 @@ describe('Login page', () => {
         // cy.get('@password').type('idea123')
         // cy.wait(2000)
         // cy.get('.Login_formSignin__3Unav').submit()
-
 
         // // validate my account url
         cy.contains('Sign out')

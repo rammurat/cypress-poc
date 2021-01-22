@@ -1,9 +1,10 @@
 describe('Login with feature data', () => {
     it('Should try to login', () => {
         cy.visit('http://localhost:3000/')
-
-        cy.fixture('users').then(user => {
-            const username = user.username
+        cy.get('.login').click()
+        cy.wait(1000)
+        cy.fixture('user').then(user => {
+            const username = user.email
             const password = user.password
 
             // login user
